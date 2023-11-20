@@ -86,7 +86,7 @@ extern "C" __declspec(dllexport) string GetOperationManifestPath(Operation * o) 
 }
 extern "C" __declspec(dllexport) void GetOperationContainers(Operation * o, vector<Container*>&c) {
 
-    c = o->get_containers();
+    c = o->get_containers();    
 }
 extern "C" __declspec(dllexport) void GetOperationMoves(Operation * o, vector<Move*>&m) {
     m = o->get_moves();

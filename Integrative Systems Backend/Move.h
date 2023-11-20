@@ -17,6 +17,8 @@ public:
     unsigned int get_time();
 };
 
+extern "C" __declspec(dllexport) void* ConstructMove();
+
 extern "C" __declspec(dllexport) void* GetMoveContainer(Move * m);
 
 extern "C" __declspec(dllexport) string GetMoveFinalLocation(Move * m);

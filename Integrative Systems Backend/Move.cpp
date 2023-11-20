@@ -25,6 +25,9 @@ unsigned int Move::get_time() {
 	return time;
 }
 
+extern "C" __declspec(dllexport) void* ConstructMove() {
+	return new Move();
+}
 extern "C" __declspec(dllexport) void* GetMoveContainer(Move * m) {
 	return m->get_container();
 }
