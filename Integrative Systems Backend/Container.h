@@ -6,7 +6,7 @@ using namespace std;
 class Container {
 
 private:
-    string location;
+    string location; // suggested format: truck - "t", ship - "s 00,00", buffer - "b 00,00"
     string description;
     unsigned int weight;
 public:
