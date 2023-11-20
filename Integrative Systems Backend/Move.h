@@ -5,11 +5,11 @@
 
 class Move {
 
-public:
+private:
     Container* container;
     string final_location;
     unsigned int time;//time in minutes it takes for move to be completed
-
+public:
     Move();
     Move(Container*, string, unsigned int);
     Container* get_container();

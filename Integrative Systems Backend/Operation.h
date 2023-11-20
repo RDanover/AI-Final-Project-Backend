@@ -5,14 +5,14 @@
 
 class Operation {
 
-public:
+private:
     string username;
     string note;
     char load_or_balance; // set to l means load operation, set to b means balance
     string manifest_path; //file location of the manifest
     vector<Container*> containers; //vector of container pointers
     vector<Move*> moves; //vector of move pointers to be completed in order index 0 = first move
-
+public:
     Operation();
 
     void set_username(string);

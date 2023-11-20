@@ -5,11 +5,11 @@ using namespace std;
 
 class Container {
 
-public:
+private:
     string location;
     string description;
     unsigned int weight;
-
+public:
     Container();
     Container(string, string, unsigned int);
     string get_location();
