@@ -7,7 +7,7 @@ class Move {
 
 private:
     Container* container;
-    string final_location;
+    string final_location;// suggested format: truck - "t", ship - "s 00,00", buffer - "b 00,00"
     unsigned int time;//time in minutes it takes for move to be completed
 public:
     Move();
