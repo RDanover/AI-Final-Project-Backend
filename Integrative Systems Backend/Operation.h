@@ -10,6 +10,7 @@ private:
     string note;
     char load_or_balance; // set to l means load operation, set to b means balance
     string manifest_path; //file location of the manifest
+    string log_path; //file location of current log file
     vector<Container*> containers; //vector of container pointers
     vector<Move*> moves; //vector of move pointers to be completed in order index 0 = first move
 public:
@@ -24,6 +25,8 @@ public:
     void set_manifest_path(string);
 
     string get_manifest_path();
+
+    string get_log_path();
 
     vector<Container*> get_containers();
 
@@ -45,6 +48,7 @@ extern "C" __declspec(dllexport) void SetOperationNote(Operation * o, string n);
 extern "C" __declspec(dllexport) void SetOperationLoadOrBalance(Operation * o, char x);
 extern "C" __declspec(dllexport) void SetOperationManifestPath(Operation * o, string m);
 extern "C" __declspec(dllexport) string GetOperationManifestPath(Operation * o);
+extern "C" __declspec(dllexport) string GetOperationLogPath(Operation * o);
 extern "C" __declspec(dllexport) void GetOperationContainers(Operation * o, vector<Container*>&c);
 extern "C" __declspec(dllexport) void GetOperationMoves(Operation * o, vector<Move*>&m);
 extern "C" __declspec(dllexport) void SetOperationUnLoad(Operation * o, vector<Container*>&c);

@@ -8,20 +8,20 @@ class Container {
 private:
     string location; // suggested format: truck - "t", ship - "s 00,00", buffer - "b 00,00"
     string description;
-    unsigned int weight;
+    int weight; //set to negative 1 if no weight provided
 public:
     Container();
-    Container(string, string, unsigned int);
+    Container(string, string, int);
     string get_location();
     string get_description();
-    unsigned int get_weight();
-    void set_weight(unsigned int);
+    int get_weight();
+    void set_weight(int);
 };
 
-extern "C" __declspec(dllexport) void* ConstructContainer(string l, string d, unsigned int w);
+extern "C" __declspec(dllexport) void* ConstructContainer(string l, string d, int w);
 extern "C" __declspec(dllexport) string GetContainerLocation(Container * c);
 extern "C" __declspec(dllexport) string GetContainerDescription(Container * c);
-extern "C" __declspec(dllexport) unsigned int GetContainerWeight(Container * c);
-extern "C" __declspec(dllexport) void SetContainerWeight(Container * c, unsigned int w);
+extern "C" __declspec(dllexport) int GetContainerWeight(Container * c);
+extern "C" __declspec(dllexport) void SetContainerWeight(Container * c, int w);
 
 #endif
