@@ -6,7 +6,7 @@ Operation::Operation() {
     note = "";
     load_or_balance = ' ';
     manifest_path = "";
-    log_path = "";
+
 }
 void Operation::set_username(string name) {
     username = name;
@@ -31,9 +31,7 @@ string Operation::get_manifest_path() {
     //make sure new manifest has been saved to new location before returning the path
     return manifest_path;
 }
-string Operation::get_log_path() {
-    return log_path;
-}
+
 vector<Container*> Operation::get_containers() {
     //make sure all containers have been gotten before returning containers
     return containers;
@@ -87,9 +85,7 @@ extern "C" __declspec(dllexport) void SetOperationManifestPath(Operation * o, st
 extern "C" __declspec(dllexport) string GetOperationManifestPath(Operation * o) {
     return o->get_manifest_path();
 }
-extern "C" __declspec(dllexport) string GetOperationLogPath(Operation * o) {
-    return o->get_log_path();
-}
+
 extern "C" __declspec(dllexport) void GetOperationContainers(Operation * o, vector<Container*>&c) {
 
     c = o->get_containers();    
